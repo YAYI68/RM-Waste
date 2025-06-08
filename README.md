@@ -1,6 +1,6 @@
 # README.md – Skip Selector UI
 
-A modern, mobile-responsive React application for selecting skip bin sizes. Built with **Vite**, **Tailwind CSS**, and **Framer Motion**, and features fully custom-built components for the UI layout.
+A modern, mobile-responsive React application for selecting skip bin sizes. Built with **Vite**, **Tailwind CSS**
 
 ---
 
@@ -9,8 +9,6 @@ A modern, mobile-responsive React application for selecting skip bin sizes. Buil
 - React 18+
 - Vite (frontend tooling)
 - Tailwind CSS (utility-first CSS framework)
-- Framer Motion (animations)
-- Custom Card Components (no UI libraries)
 
 ---
 
@@ -19,8 +17,7 @@ A modern, mobile-responsive React application for selecting skip bin sizes. Buil
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/skip-selector-ui.git
-cd skip-selector-ui
+git clone git@github.com:YAYI68/RM-Waste.git
 ```
 
 ### 2. Create a Vite React Project
@@ -43,25 +40,20 @@ cd skip-selector-ui
 npm install
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
-npm install framer-motion
 ```
 
 ### 4. Tailwind Configuration
 
-In `tailwind.config.js`:
+In `vite.config.js`:
 
 ```js
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    './index.html',
-    './src/**/*.{js,ts,jsx,tsx}',
+import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
+export default defineConfig({
+  plugins: [
+    tailwindcss(),
   ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
+})
 ```
 
 In `src/index.css`:
@@ -96,4 +88,5 @@ Visit [http://localhost:5173](http://localhost:5173) to view the application.
 npm run build
 ```
 
+Visit [https://rm-waste.vercel.app](https://rm-waste.vercel.app/) to view the live application.
 ---
