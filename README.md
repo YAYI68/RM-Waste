@@ -1,54 +1,99 @@
-# React + TypeScript + Vite
+# README.md – Skip Selector UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, mobile-responsive React application for selecting skip bin sizes. Built with **Vite**, **Tailwind CSS**, and **Framer Motion**, and features fully custom-built components for the UI layout.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔧 Tech Stack
 
-## Expanding the ESLint configuration
+- React 18+
+- Vite (frontend tooling)
+- Tailwind CSS (utility-first CSS framework)
+- Framer Motion (animations)
+- Custom Card Components (no UI libraries)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/skip-selector-ui.git
+cd skip-selector-ui
+```
+
+### 2. Create a Vite React Project
+
+```bash
+npm create vite@latest .
+# Choose "React" when prompted
+```
+
+Or, start from scratch:
+
+```bash
+npm init vite@latest skip-selector-ui -- --template react
+cd skip-selector-ui
+```
+
+### 3. Install Dependencies
+
+```bash
+npm install
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+npm install framer-motion
+```
+
+### 4. Tailwind Configuration
+
+In `tailwind.config.js`:
 
 ```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
   ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
+  theme: {
+    extend: {},
   },
-})
+  plugins: [],
+}
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+In `src/index.css`:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 ```
+
+Ensure `main.jsx` imports the stylesheet:
+
+```jsx
+import './index.css';
+```
+
+---
+
+## ▶️ Running the App
+
+```bash
+npm run dev
+```
+
+Visit [http://localhost:5173](http://localhost:5173) to view the application.
+
+---
+
+## 🏗️ Building for Production
+
+```bash
+npm run build
+```
+
+---
